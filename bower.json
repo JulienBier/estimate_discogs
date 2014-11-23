@@ -1,0 +1,22 @@
+{
+  "name": "estimate_discogs",
+  "version": "0.0.1",
+  "description": "Estimate media collection using Discogs api",
+  "authors": [
+    "Julien Bier"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/JulienBier/estimate_discogs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1",
+    "angular": "~1.3.3",
+    "angular-route": "~1.3.3"
+  }
+}
