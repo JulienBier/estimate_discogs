@@ -1,8 +1,6 @@
-
 /**
  * Module dependencies
  */
-
 var express = require('express'),
   bodyParser = require('body-parser'),
   methodOverride = require('method-override'),
@@ -11,10 +9,10 @@ var express = require('express'),
   routes = require('./routes'),
   api = require('./routes/api'),
   http = require('http'),
-  path = require('path');
+  path = require('path'),
+  disconnect = require('disconnect');
 
 var app = module.exports = express();
-
 
 /**
  * Configuration
@@ -24,7 +22,7 @@ var app = module.exports = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -54,11 +52,14 @@ app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
 
 // JSON API
-app.get('/api/name', api.name);
-
+app.get('/api/collection/:name', api.collection);
+app.get('/api/users/:name', api.users);
+app.get('/api/release/:name', api.release);
+app.get('/api/marketplace/prices/:releaseid', api.marketplace);
+app.get('/api/authorize', api.authorize);
+app.get('/api/callback', api.callback);
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
-
 
 /**
  * Start Server

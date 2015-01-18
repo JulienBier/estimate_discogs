@@ -7,7 +7,11 @@ angular.module('myApp', [
   'myApp.controllers',
   'myApp.filters',
   'myApp.services',
-  'myApp.directives'
+  'myApp.directives',
+  'discogs.collection',
+  'discogs.users',
+  'discogs.release',
+  'discogs.marketplace'
 ]).config(function ($routeProvider, $locationProvider) {
   $routeProvider.
     when('/home', {
@@ -16,7 +20,7 @@ angular.module('myApp', [
     }).
     when('/collection', {
       templateUrl: 'partials/collection',
-      controller: 'MyCtrl2'
+      controller: 'collectionCtrl'
     }).
     otherwise({
       redirectTo: '/home'

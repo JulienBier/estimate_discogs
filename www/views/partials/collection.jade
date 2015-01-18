@@ -1,1 +1,6 @@
-p This is the partial for collection.
+div.collection-container.container
+  h3 Collection of {{username}}
+  img(ng-src="{{avatarUrl}}")
+  ul.collection
+    li(ng-repeat="release in releases", ng-class="release")
+      span {{release.artist}} - {{release.title}}

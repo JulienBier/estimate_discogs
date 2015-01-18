@@ -1,1 +1,8 @@
 /* app css stylesheet */
+.collection-container {
+  position: absolute;
+  top: 70px;
+  bottom: 70px;
+  background-color: rgb(194, 212, 216);
+  overflow-y: auto;
+}
